@@ -6,15 +6,15 @@
 //  Copyright © 2017年 fan. All rights reserved.
 //
 
-#import "FYSocketManager.h"
+#import "FYSocialManager.h"
 
-@interface FYSocketManager ()<GCDAsyncSocketDelegate> {
+@interface FYSocialManager ()<GCDAsyncSocketDelegate> {
     
 }
 
 @end
 
-@implementation FYSocketManager
+@implementation FYSocialManager
 
 - (instancetype)initWithDelegate:(id)delegate delegateQueue:(dispatch_queue_t)queue {
     if (self = [super init]) {

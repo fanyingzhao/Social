@@ -6,8 +6,8 @@
 //  Copyright © 2017年 fan. All rights reserved.
 //
 
-#import "FYSocketMessage.h"
+#import "FYMessage.h"
 
-@implementation FYSocketMessage
+@implementation FYMessage
 
 @end

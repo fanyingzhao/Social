@@ -16,8 +16,9 @@
 		6228D1B51E8BAB5D006AAE51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6228D1B31E8BAB5D006AAE51 /* LaunchScreen.storyboard */; };
 		6228D1C01E8BAB5E006AAE51 /* SocketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1BF1E8BAB5E006AAE51 /* SocketTests.m */; };
 		6228D1CB1E8BAB5E006AAE51 /* SocketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1CA1E8BAB5E006AAE51 /* SocketUITests.m */; };
-		6228D1DA1E8BADC2006AAE51 /* FYSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1D91E8BADC2006AAE51 /* FYSocketManager.m */; };
-		6228D1DE1E8BB78B006AAE51 /* FYSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1DD1E8BB78B006AAE51 /* FYSocketMessage.m */; };
+		6228D1E41E8BBAC0006AAE51 /* FYSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1E11E8BBAC0006AAE51 /* FYSocialManager.m */; };
+		6228D1E51E8BBAC0006AAE51 /* FYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1E31E8BBAC0006AAE51 /* FYMessage.m */; };
+		6228D1E81E8BBADC006AAE51 /* FYContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1E71E8BBADC006AAE51 /* FYContact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,12 @@
 		6228D1C61E8BAB5E006AAE51 /* SocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6228D1CA1E8BAB5E006AAE51 /* SocketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketUITests.m; sourceTree = "<group>"; };
 		6228D1CC1E8BAB5E006AAE51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6228D1D81E8BADC2006AAE51 /* FYSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSocketManager.h; sourceTree = "<group>"; };
-		6228D1D91E8BADC2006AAE51 /* FYSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSocketManager.m; sourceTree = "<group>"; };
-		6228D1DC1E8BB78B006AAE51 /* FYSocketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSocketMessage.h; sourceTree = "<group>"; };
-		6228D1DD1E8BB78B006AAE51 /* FYSocketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSocketMessage.m; sourceTree = "<group>"; };
+		6228D1E01E8BBAC0006AAE51 /* FYSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSocialManager.h; sourceTree = "<group>"; };
+		6228D1E11E8BBAC0006AAE51 /* FYSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSocialManager.m; sourceTree = "<group>"; };
+		6228D1E21E8BBAC0006AAE51 /* FYMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYMessage.h; sourceTree = "<group>"; };
+		6228D1E31E8BBAC0006AAE51 /* FYMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYMessage.m; sourceTree = "<group>"; };
+		6228D1E61E8BBADC006AAE51 /* FYContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYContact.h; sourceTree = "<group>"; };
+		6228D1E71E8BBADC006AAE51 /* FYContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYContact.m; sourceTree = "<group>"; };
 		DAE24235EBFB3339522BB5D9 /* Pods-Socket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socket/Pods-Socket.debug.xcconfig"; sourceTree = "<group>"; };
 		EE6B6479B2D83A66927AF99D /* Pods_Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,14 +125,11 @@
 		6228D1A41E8BAB5D006AAE51 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
+				6228D1DF1E8BBAB4006AAE51 /* FYSocial */,
 				6228D1A81E8BAB5D006AAE51 /* AppDelegate.h */,
 				6228D1A91E8BAB5D006AAE51 /* AppDelegate.m */,
 				6228D1AB1E8BAB5D006AAE51 /* ViewController.h */,
 				6228D1AC1E8BAB5D006AAE51 /* ViewController.m */,
-				6228D1DC1E8BB78B006AAE51 /* FYSocketMessage.h */,
-				6228D1DD1E8BB78B006AAE51 /* FYSocketMessage.m */,
-				6228D1D81E8BADC2006AAE51 /* FYSocketManager.h */,
-				6228D1D91E8BADC2006AAE51 /* FYSocketManager.m */,
 				6228D1AE1E8BAB5D006AAE51 /* Main.storyboard */,
 				6228D1B11E8BAB5D006AAE51 /* Assets.xcassets */,
 				6228D1B31E8BAB5D006AAE51 /* LaunchScreen.storyboard */,
@@ -163,6 +163,19 @@
 				6228D1CC1E8BAB5E006AAE51 /* Info.plist */,
 			);
 			path = SocketUITests;
+			sourceTree = "<group>";
+		};
+		6228D1DF1E8BBAB4006AAE51 /* FYSocial */ = {
+			isa = PBXGroup;
+			children = (
+				6228D1E01E8BBAC0006AAE51 /* FYSocialManager.h */,
+				6228D1E11E8BBAC0006AAE51 /* FYSocialManager.m */,
+				6228D1E21E8BBAC0006AAE51 /* FYMessage.h */,
+				6228D1E31E8BBAC0006AAE51 /* FYMessage.m */,
+				6228D1E61E8BBADC006AAE51 /* FYContact.h */,
+				6228D1E71E8BBADC006AAE51 /* FYContact.m */,
+			);
+			path = FYSocial;
 			sourceTree = "<group>";
 		};
 		CDEB4DBEC012836707E75C33 /* Pods */ = {
@@ -358,11 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6228D1DE1E8BB78B006AAE51 /* FYSocketMessage.m in Sources */,
 				6228D1AD1E8BAB5D006AAE51 /* ViewController.m in Sources */,
 				6228D1AA1E8BAB5D006AAE51 /* AppDelegate.m in Sources */,
 				6228D1A71E8BAB5D006AAE51 /* main.m in Sources */,
-				6228D1DA1E8BADC2006AAE51 /* FYSocketManager.m in Sources */,
+				6228D1E51E8BBAC0006AAE51 /* FYMessage.m in Sources */,
+				6228D1E41E8BBAC0006AAE51 /* FYSocialManager.m in Sources */,
+				6228D1E81E8BBADC006AAE51 /* FYContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

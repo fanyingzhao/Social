@@ -10,6 +10,10 @@
 #import "GCDAsyncSocket.h"
 #import "FYMessage.h"
 #import "FYContact.h"
+#import "FYError.h"
+
+typedef void (^FailureBlock)(FYError* error);
+typedef void (^EmptyBlock)();
 
 @protocol FYSocketManagerDelegate <NSObject>
 @optional
@@ -30,39 +34,48 @@
 @property (nonatomic, strong, readonly) GCDAsyncSocket* tcpSocket;
 
 /**
- 初始化
-
- @param delegate 代理
- @param queue 队列，如果不传，则为主队列
- @return 实例
+ 是否是debug模式，当debug模式会显示错误信息
  */
-- (instancetype)initWithDelegate:(id)delegate delegateQueue:(dispatch_queue_t)queue;
+@property (nonatomic) BOOL debug;
+
++ (instancetype)sharedFYIM;
+
+- (void)initWithKey:(NSString*)key secret:(NSString*)secret;
+
 
 /**
- 连接主机
+ 链接服务器
 
- @param host 主机IP
- @param port 端口
- @param error 错误信息
- @return 是否连接成功
+ @param token 身份令牌
+ @param successBlock 成功回调
+ @param failureBlock 失败回调
  */
-- (BOOL)connectToHost:(NSString*)host port:(NSInteger)port error:(NSError**)error;
+- (void)connectWithToken:(NSString*)token
+                 success:(EmptyBlock)successBlock
+                 failure:(FailureBlock)failureBlock;
+
+/**
+ 断开与服务器的连接
+ */
+- (void)disconnect;
 
 /**
  发送消息给某个联系对象
 
- @param message 消息
- @param contact 联系对象
- @return 是否发送成功
  */
-- (BOOL)setMessage:(FYMessage*)message toContact:(FYContact*)contact;
+- (void)setMessage:(FYMessage*)message
+          targetID:(NSString*)targetID
+           success:(EmptyBlock)successBlock
+           failure:(FailureBlock)failureBlock;
 
 /**
  注册用户
 
  @param contact 用户对象
+ 用什么注册？
+ 待修改
  */
-- (void)registerUser:(FYContact*)contact;
+- (void)registerUser:(FYContact*)contact complete:(FYContactUser*)contact;
 
 /**
  获取联系人对象列表

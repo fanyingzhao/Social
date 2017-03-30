@@ -22,17 +22,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    self.manager = [[FYSocialManager alloc] initWithDelegate:self delegateQueue:nil];
-    
-    NSError* error = nil;
-    [self.manager connectToHost:@"www.baidu.com" port:80 error:&error];
-    if (error) {
-        NSLog(@"%@",error);
-    }
-    
-    [self.manager.tcpSocket readDataWithTimeout:3 tag:1];
-    [self.manager.tcpSocket writeData:[@"GET / HTTP/1.1\n\n" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:3 tag:1];
 }
 
 

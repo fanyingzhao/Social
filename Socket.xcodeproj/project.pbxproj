@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		586574152A28B5626AF0C692 /* Pods_Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6B6479B2D83A66927AF99D /* Pods_Socket.framework */; };
+		6226849A1E8CA27B00F90F86 /* FYConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 622684991E8CA27B00F90F86 /* FYConversation.m */; };
+		6226849E1E8CB00C00F90F86 /* FYError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6226849D1E8CB00C00F90F86 /* FYError.m */; };
 		6228D1A71E8BAB5D006AAE51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1A61E8BAB5D006AAE51 /* main.m */; };
 		6228D1AA1E8BAB5D006AAE51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1A91E8BAB5D006AAE51 /* AppDelegate.m */; };
 		6228D1AD1E8BAB5D006AAE51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6228D1AC1E8BAB5D006AAE51 /* ViewController.m */; };
@@ -40,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		36A352D1BD5C4E4BB4DD7645 /* Pods-Socket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socket.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socket/Pods-Socket.release.xcconfig"; sourceTree = "<group>"; };
+		622684981E8CA27B00F90F86 /* FYConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYConversation.h; sourceTree = "<group>"; };
+		622684991E8CA27B00F90F86 /* FYConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYConversation.m; sourceTree = "<group>"; };
+		6226849C1E8CB00C00F90F86 /* FYError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYError.h; sourceTree = "<group>"; };
+		6226849D1E8CB00C00F90F86 /* FYError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYError.m; sourceTree = "<group>"; };
 		6228D1A21E8BAB5D006AAE51 /* Socket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6228D1A61E8BAB5D006AAE51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6228D1A81E8BAB5D006AAE51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +180,10 @@
 				6228D1E31E8BBAC0006AAE51 /* FYMessage.m */,
 				6228D1E61E8BBADC006AAE51 /* FYContact.h */,
 				6228D1E71E8BBADC006AAE51 /* FYContact.m */,
+				622684981E8CA27B00F90F86 /* FYConversation.h */,
+				622684991E8CA27B00F90F86 /* FYConversation.m */,
+				6226849C1E8CB00C00F90F86 /* FYError.h */,
+				6226849D1E8CB00C00F90F86 /* FYError.m */,
 			);
 			path = FYSocial;
 			sourceTree = "<group>";
@@ -371,11 +381,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6226849A1E8CA27B00F90F86 /* FYConversation.m in Sources */,
 				6228D1AD1E8BAB5D006AAE51 /* ViewController.m in Sources */,
 				6228D1AA1E8BAB5D006AAE51 /* AppDelegate.m in Sources */,
 				6228D1A71E8BAB5D006AAE51 /* main.m in Sources */,
 				6228D1E51E8BBAC0006AAE51 /* FYMessage.m in Sources */,
 				6228D1E41E8BBAC0006AAE51 /* FYSocialManager.m in Sources */,
+				6226849E1E8CB00C00F90F86 /* FYError.m in Sources */,
 				6228D1E81E8BBADC006AAE51 /* FYContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

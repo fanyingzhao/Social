@@ -7,18 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FYContact.h"
 
 typedef  NS_ENUM(NSInteger, MessageType) {
-    MessageSystem,                      // 系统消息
-    MessageNewfriend,                   // 申请加好友消息
-    MessageFriendLogin,                 // 有好友上线
-    MessageText,                        // 文本消息
-    MessageImage,                       // 图片消息
-    MessageVideo,                       // 短视频
-    MessageRedPacket,                   // 红包消息
-    MessageCallVideo,                   // 视频通话
-    MessageCallSound,                   // 语音通话
+    MessageType_System,                      // 系统消息
+    MessageType_Command,                     // 命令消息，不会显示
+    MessageType_Text,                        // 文本消息
+    MessageType_Image,                       // 图片消息
+    MessageType_Video,                       // 短视频
+    MessageType_RedPacket,                   // 红包消息
+    MessageType_CallVideo,                   // 视频通话
+    MessageType_CallSound,                   // 语音通话
+};
+
+typedef NS_ENUM(NSInteger, MessageReceiveStatus) {
+    MessageReceiveStatus_Unread,                // 未读
+    MessageReceiveStatus_Read,                  // 已读
+};
+
+typedef NS_ENUM(NSInteger, MessageSendStatus) {
+    MessageSendStatus_Sending,                  // 发送中
+    MessageSendStatus_Send,                     // 发送成功
+    MessageSendStatus_Failure,                  // 发送失败
+    MessageSendStatus_Receiver,                 // 对方已经接受
 };
 
 @interface FYMessage : NSObject {
@@ -31,15 +41,38 @@ typedef  NS_ENUM(NSInteger, MessageType) {
 @property (nonatomic) MessageType type;
 
 /**
- 消息接受者
+ 消息ID
  */
-@property (nonatomic, strong) FYContact* receiver;
+@property (nonatomic, copy) NSString* messageID;
 
 /**
- 消息发送者
+ 消息接受者ID
  */
-@property (nonatomic, strong) FYContact* sender;
+@property (nonatomic, strong) NSString* receiverID;
 
+/**
+ 消息发送者ID
+ */
+@property (nonatomic, strong) NSString* senderID;
+
+/**
+ 消息所属的会话ID
+ */
+@property (nonatomic, strong, readonly) NSString* conversationID;
+
+/**
+ 消息的发送时间（本地时间，服务器时间待定）
+ */
+@property (nonatomic, readonly) long long sendTime;
+
+/**
+ 消息接受到的时间
+ */
+@property (nonatomic, readonly) long long receiverTime;
+
+
+- (instancetype)initWithReceiverID:(NSString*)reciverID
+                           content:(NSString*)content;
 
 @end
 
@@ -47,6 +80,12 @@ typedef  NS_ENUM(NSInteger, MessageType) {
 /**************************************************************
  *  子类
  **************************************************************/
+
+typedef NS_ENUM(NSInteger, SystemMessageType) {
+    SystemMessageType_AddFriend,            // 加好友申请
+    SystemMessageType_AddGroup,             // 加群申请
+    SystemMessageType_FriendLogin,          // 好友上线
+};
 
 /**
  系统消息
@@ -73,5 +112,17 @@ typedef  NS_ENUM(NSInteger, MessageType) {
  红包消息
  */
 @interface FYMessageRedPacket : FYMessage
+
+@end
+
+typedef NS_ENUM(NSInteger, CommandMessageType) {
+    CommandMessageType_Logout,                  // 退出登录
+    CommandMessageType_Prompt,                  // 弹窗提示
+};
+
+/**
+ 命令消息
+ */
+@interface FYMessageCommand : FYMessage
 
 @end

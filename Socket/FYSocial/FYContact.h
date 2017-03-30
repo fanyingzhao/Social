@@ -12,15 +12,31 @@
 
 @end
 
-
+/**
+ 群
+ */
 @interface FYContactGroup : FYContact
 
 @end
 
-@interface FYContactPersion : FYContact
+/**
+ 用户
+ */
+@interface FYContactUser : FYContact
 
 @end
 
+/**
+ 讨论组
+ */
 @interface FYContactDiscuss : FYContact
 
 @end
+
+/**
+ 客服
+ */
+@interface FYContactService : FYContact
+
+@end
+
